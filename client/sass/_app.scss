@@ -1,11 +1,78 @@
 #app {
-	#logo {
-		width: 64px;
-		height: 64px;
-		margin-top: 64px;
-		margin-bottom: 16px;
-	}
-	h1 {
-		font-size: 32px;
-	}
+    #logo {
+        width: 64px;
+        height: 64px;
+        margin-top: 64px;
+        margin-bottom: 16px;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+    h2 {
+        margin-bottom: 32px;
+        font-size: 1.0em;
+        color: #bdbedb;
+    }
+    #result {
+        display: none;
+        font-size: 32px;
+        color: #D15A5A;
+        margin-bottom: 12px;
+    }
+    .button {
+        cursor: pointer;
+        display: inline-block;
+        padding: 12px;
+        border-radius: 36px;
+        color: #fff;
+        background-color: #D15A5A;
+        margin-bottom: 12px;
+        &.hover {
+            background-color: #E67E7E;
+        }
+    }
+    #randomize-button {
+        display: none;
+    }
+    #clear-button {
+        display: none;
+        background-color: #BFC4D8;
+        color: #fff;
+        margin-top: 12px;
+        &.hover {
+            background-color: #A1ACD5;
+        }
+    }
+    #tags {
+        cursor: text;
+        margin: 0 auto;
+        width: 50%;
+        font-family: "GothamRounded", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        input[type=text] {
+            font-family: "GothamRounded", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            padding-left: 8px;
+            width: 100%;
+        }
+    }
+    ul.tagit li {
+        float: none;
+        cursor: pointer;
+        text-align: left;
+        &.tagit-choice {
+            padding: 8px;
+            .tagit-close {
+                right: 8px;
+            }
+        }
+    }
+}
+.ui-autocomplete {
+    text-align: left;
+    font-family: "GothamRounded", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+
+    a { cursor: pointer; }
 }
