@@ -15,7 +15,6 @@
         color: #bdbedb;
     }
     #result {
-        display: none;
         font-size: 32px;
         color: #D15A5A;
         margin-bottom: 12px;
@@ -33,10 +32,10 @@
         }
     }
     #randomize-button {
-        display: none;
+        display: inline-block;
     }
     #clear-button {
-        display: none;
+        display: inline-block;
         background-color: #BFC4D8;
         color: #fff;
         margin-top: 12px;
