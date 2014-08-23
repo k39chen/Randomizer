@@ -2,10 +2,6 @@ Meteor.startup(function(){
 	console.log("Hello Randomizer!");
 });
 
-Meteor.publish("tags", function(){
-	return Tags.find();
-});
-
 Meteor.methods({
 	/**
 	 * Adds a list of tags to the running list.

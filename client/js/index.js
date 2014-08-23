@@ -10,13 +10,7 @@
 Router.map(function(){
 	this.route("app", {
 		path: "/",
-		template: "app",
-		waitOn: function(){
-			return Meteor.subscribe("tags");
-		},
-		data: function() {
-			return Tags.find().fetch();
-		}
+		template: "app"
 		/* yieldTemplates */
 	});
 });
