@@ -2,6 +2,7 @@ Template.app.rendered = function() {
 
 	// hide the buttons by default
 	$(".button").hide();
+	$("#result").hide();
 
 	// initialize the tag widget
     $("#tags").tagit({
@@ -39,10 +40,13 @@ Template.app.events({
 	},
 	"click #randomize-button": function(e) {
 		var $el = $(e.target);
-		// ...
+		var tags = $("#tags").tagit("assignedTags");
+		var winner = tags[rand(0,tags.length-1)];
+		$("#result").show().css({opacity:0}).text(winner).stop().animate({opacity:1},300);
 	},
 	"click #clear-button": function(e) {
 		var $el = $(e.target);
 		$("#tags").tagit("removeAll");
+		$("#result").css({opacity:1}).stop().animate({opacity:0},300,function(){$(this).hide();});
 	}
 });
