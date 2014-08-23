@@ -22,15 +22,10 @@
         margin-bottom: 12px;
     }
     .button {
-
-    
-
--moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-
-
-
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
         cursor: pointer;
         display: inline-block;
         padding: 12px;
