@@ -11,34 +11,36 @@ Template.app.rendered = function() {
 			return item.label;
 		});
 
-		$("#spinner").css({opacity:1}).stop().animate({opacity:0},300,function(){
-			$(this).hide();
+		setTimeout(function(){
+			$("#spinner").css({opacity:1}).stop().animate({opacity:0},300,function(){
+				$(this).hide();
 
-			// initialize the tag widget
-		    $("#tags").tagit({
-		    	placeholderText: "Start typing your option here!",
-		    	availableTags: availableTags,
-		    	caseSensitive: false,
-		    	allowSpaces: true,
-		    	tabIndex: 0,
-		    	animate: false,
-		    	afterTagAdded: function() {
-		    		var buttons = $(".button");
+				// initialize the tag widget
+			    $("#tags").tagit({
+			    	placeholderText: "Start typing your option here!",
+			    	availableTags: availableTags,
+			    	caseSensitive: false,
+			    	allowSpaces: true,
+			    	tabIndex: 0,
+			    	animate: false,
+			    	afterTagAdded: function() {
+			    		var buttons = $(".button");
 
-		    		// see if we should show the randomize button
-		    		if (buttons.is(":hidden")) {
-		    			buttons.show().css({opacity:0}).stop().animate({opacity:1},300);
-		    		}
-		    	},
-		    	afterTagRemoved: function(e) {
-		    		var $tagit = $(e.target),
-		    			buttons = $(".button");
-		    		if ($tagit.tagit("assignedTags").length === 0) {
-		    			buttons.css({opacity:1}).stop().animate({opacity:0},300,function(){$(this).hide();});
-		    		}
-		    	}
-		    });
-		});
+			    		// see if we should show the randomize button
+			    		if (buttons.is(":hidden")) {
+			    			buttons.show().css({opacity:0}).stop().animate({opacity:1},300);
+			    		}
+			    	},
+			    	afterTagRemoved: function(e) {
+			    		var $tagit = $(e.target),
+			    			buttons = $(".button");
+			    		if ($tagit.tagit("assignedTags").length === 0) {
+			    			buttons.css({opacity:1}).stop().animate({opacity:0},300,function(){$(this).hide();});
+			    		}
+			    	}
+			    });
+			});
+		}, 2000);
 	});
 };
 Template.app.events({
