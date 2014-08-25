@@ -1,5 +1,5 @@
 // Meteor subscriptions
-// ...
+//Meteor.subscribe("tags");
 
 // define router configuration
 // ...

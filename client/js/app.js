@@ -5,6 +5,9 @@ Template.app.rendered = function() {
 	$("#result").hide();
 	$("#spinner").show().css({opacity:0}).stop().animate({opacity:1},300);
 
+
+	$("#remove-button").show();
+
 	Meteor.call("getTags", function(err,data){
 		var prioritizedData = data.sort(function(a,b){return a-b;});
 		var availableTags = $.map(prioritizedData,function(item){
@@ -63,5 +66,14 @@ Template.app.events({
 		var $el = $(e.target);
 		$("#tags").tagit("removeAll");
 		$("#result").css({opacity:1}).stop().animate({opacity:0},300,function(){$(this).hide();});
+	},
+	"click #remove-button": function(e) {
+		var $el = $(e.target);
+		Meteor.call("removeTags");
+	}
+});
+Template.app.helpers({
+	debug: function() {
+		return false;
 	}
 });
